@@ -55,7 +55,11 @@ define(['../../../api/element'], function (element) {
                 // iterate over it
                 var pElementChildNodes = Array.prototype.slice.call(containerPElement.childNodes);
                 pElementChildNodes.forEach(function(pElementChildNode) {
-                  if (pElementChildNode.nodeName === 'SPAN') {
+                  if (pElementChildNode.nodeName === 'SPAN' &&
+                      pElementChildNode.className != 'font-size-smaller' &&
+                      pElementChildNode.className != 'font-size-larger' &&
+                      pElementChildNode.className != 'pplr-icon' &&
+                      pElementChildNode.className != 'pplr-accent') {
                     // Unwrap any SPAN that has been inserted
                     var spanElement = pElementChildNode;
                     element.unwrap(containerPElement, spanElement);

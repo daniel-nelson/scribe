@@ -49,7 +49,11 @@ define(['../../../../api/element'], function (element) {
             if (!node) { return; }
 
             do {
-              if (node.nodeName === 'SPAN') {
+              if (node.nodeName === 'SPAN' &&
+                  node.className != 'font-size-smaller' &&
+                  node.className != 'font-size-larger' &&
+                  node.className != 'pplr-icon' &&
+                  node.className != 'pplr-accent') {
                 element.unwrap(parentNode, node);
               } else {
                 /**
