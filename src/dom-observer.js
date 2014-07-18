@@ -27,6 +27,7 @@ define([
 
     // Flag to avoid running recursively
     var runningPostMutation = false;
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
     var observer = new MutationObserver(function(mutations) {
       if (! runningPostMutation && includeRealMutations(mutations)) {
         runningPostMutation = true;
